@@ -82,18 +82,29 @@ body{
 .bg {
   background: url("../images/temp_Mountain.png") center center;
   position: fixed;
-  width: 100%;
-  height: 100%; /*same height as jumbotron */
+  height: 100vh; /*same height as jumbotron */
   top:0;
   left:0;
   z-index: -1;
+  background-attachment: fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  padding-bottom: 200px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
+
+
 
 //Clouds
 $duration: 10s;
 
 $cloud-height: 15%;
-$cloud-width: 100%;
+$cloud-width: 1920px;
 $cloud-bg: #eccd80;
 
 $parallax-ratio: 1.618;
@@ -103,16 +114,17 @@ $cloud-order: 1 4 2 5 3;
   
   background: url("../images/Clouds.png");
   width: $cloud-width;
-  position: absolute;
+  position:  fixed;
   
   animation: float-across $duration linear infinite;
   
   @each $position in $cloud-order {
     $i: index($cloud-order, $position);
-    &:nth-child(#{$i + 1}) {
+    &:nth-child(#{($i + 1 )}) {
       $time: $duration * $i + 3;
       animation-duration: $time * $parallax-ratio;
-      height: $cloud-height + 50;// + 1% * (length($cloud-order) - $position);
+      height: $cloud-height;// + 1% * (length($cloud-order) - $position);
+      top: 0rem;
     }
   }
 }
@@ -128,15 +140,12 @@ $cloud-order: 1 4 2 5 3;
   }
 }
 
-.jumbotron {
+#fly-in {
   height: 350px;
   color: #343a40;
   text-shadow: #444 .1 5px 5px;
   background: rgba(255, 255, 255, 0);
-}
-
-//Fancy Div Things
-#fly-in {
+  margin-bottom: 100%;
   font-size: 3rem;
   margin: 5vh auto;
   height: 1vh; 
@@ -174,8 +183,30 @@ $cloud-order: 1 4 2 5 3;
     80% { opacity: 0}
     100% { opacity: 0}
 }
-#1st_space{
-  width: 100px;
-  position:relative;
-  height: 1000px;
+
+.slide {
+  position: relative;
+  padding: 25vh 10%;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
+	transform-style: inherit;
+}
+
+#slide1{
+  background: url("../images/temp_design.jpg") center center;
+  position: fixed;
+  height: 100vh; /*same height as jumbotron */
+  z-index: -1;
+  background-attachment: fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  padding-bottom: 200px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
