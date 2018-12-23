@@ -1,12 +1,22 @@
 /* Scss Document */
 
 body{
-  background: #1f7b80;
+  background: rgb(139, 206, 252);
   color: #444;
   font-family: cubano, sans-serif;
 }
 
+p{
+  font-family: ff-avance-pro, serif;
+  font-style: normal;
+  font-weight: 400;
+}
 //Navbar
+.navbar{
+  position: fixed;
+  width: 100%;
+}
+
 #Sky_Icon {
   padding-left: -3rem;
   padding-right: 5rem;
@@ -78,6 +88,7 @@ body{
   font-size: 1.45rem;
 }
 
+
 //Background
 .bg {
   background: url("../images/temp_Mountain.png") center center;
@@ -103,7 +114,7 @@ body{
 //Clouds
 $duration: 10s;
 
-$cloud-height: 15%;
+$cloud-height: 20%;
 $cloud-width: 1920px;
 $cloud-bg: #eccd80;
 
@@ -114,7 +125,7 @@ $cloud-order: 1 4 2 5 3;
   
   background: url("../images/Clouds.png");
   width: $cloud-width;
-  position:  fixed;
+  position:  absolute;
   
   animation: float-across $duration linear infinite;
   
@@ -123,7 +134,7 @@ $cloud-order: 1 4 2 5 3;
     &:nth-child(#{($i + 1 )}) {
       $time: $duration * $i + 3;
       animation-duration: $time * $parallax-ratio;
-      height: $cloud-height;// + 1% * (length($cloud-order) - $position);
+      height: $cloud-height + $i;// + 1% * (length($cloud-order) - $position);
       top: 0rem;
     }
   }
@@ -184,29 +195,68 @@ $cloud-order: 1 4 2 5 3;
     100% { opacity: 0}
 }
 
-.slide {
+//Contents
+.cbr-1{
   position: relative;
-  padding: 25vh 10%;
+  top: 20rem;
+  left: -20rem;
+}
+
+.cbr-2{
+  position: relative;
+  top: 20rem;
+  left: 30rem;
+}
+
+.slide {
+  margin: 0;
   min-height: 100vh;
+  height: 100vh; /*same height as jumbotron */
+  z-index: -1;
   width: 100vw;
   box-sizing: border-box;
   box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
 	transform-style: inherit;
+  overflow:hidden;
+  
 }
 
 #slide1{
   background: url("../images/temp_design.jpg") center center;
-  position: fixed;
-  height: 100vh; /*same height as jumbotron */
-  z-index: -1;
   background-attachment: fixed;
   background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
-  padding-bottom: 200px;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
+}
+
+#slide2{
+  background: url("../images/temp_code.jpg") center center;
+  background-attachment: fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+#slide3{
+  background: url("../images/temp_photography.jpg") center center;
+  background-attachment: fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+#slide4{
+  background: url("../images/temp_f1.jpg") center center;
+  background-attachment: fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
 }

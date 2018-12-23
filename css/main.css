@@ -1,8 +1,17 @@
 /* Scss Document */
 body {
-  background: #1f7b80;
+  background: #8bcefc;
   color: #444;
   font-family: cubano, sans-serif; }
+
+p {
+  font-family: ff-avance-pro, serif;
+  font-style: normal;
+  font-weight: 400; }
+
+.navbar {
+  position: fixed;
+  width: 100%; }
 
 #Sky_Icon {
   padding-left: -3rem;
@@ -77,27 +86,27 @@ body {
 .cloud {
   background: url("../images/Clouds.png");
   width: 1920px;
-  position: fixed;
+  position: absolute;
   animation: float-across 10s linear infinite; }
   .cloud:nth-child(2) {
     animation-duration: 21.034s;
-    height: 15%;
+    height: 21%;
     top: 0rem; }
   .cloud:nth-child(3) {
     animation-duration: 37.214s;
-    height: 15%;
+    height: 22%;
     top: 0rem; }
   .cloud:nth-child(4) {
     animation-duration: 53.394s;
-    height: 15%;
+    height: 23%;
     top: 0rem; }
   .cloud:nth-child(5) {
     animation-duration: 69.574s;
-    height: 15%;
+    height: 24%;
     top: 0rem; }
   .cloud:nth-child(6) {
     animation-duration: 85.754s;
-    height: 15%;
+    height: 25%;
     top: 0rem; }
 
 @keyframes float-across {
@@ -172,28 +181,60 @@ body {
     opacity: 0; }
   100% {
     opacity: 0; } }
-.slide {
+.cbr-1 {
   position: relative;
-  padding: 25vh 10%;
-  min-height: 100vh;
-  width: 100vw;
-  box-sizing: border-box;
-  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.7);
-  transform-style: inherit; }
+  top: 20rem;
+  left: -20rem; }
 
-#slide1 {
-  background: url("../images/temp_design.jpg") center center;
-  position: fixed;
+.cbr-2 {
+  position: relative;
+  top: 20rem;
+  left: 30rem; }
+
+.slide {
+  margin: 0;
+  min-height: 100vh;
   height: 100vh;
   /*same height as jumbotron */
   z-index: -1;
+  width: 100vw;
+  box-sizing: border-box;
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.7);
+  transform-style: inherit;
+  overflow: hidden; }
+
+#slide1 {
+  background: url("../images/temp_design.jpg") center center;
   background-attachment: fixed;
   background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
-  padding-bottom: 200px;
-  overflow: hidden;
-  position: relative;
-  width: 100%; }
+  background-position: top center; }
+
+#slide2 {
+  background: url("../images/temp_code.jpg") center center;
+  background-attachment: fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center; }
+
+#slide3 {
+  background: url("../images/temp_photography.jpg") center center;
+  background-attachment: fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center; }
+
+#slide4 {
+  background: url("../images/temp_f1.jpg") center center;
+  background-attachment: fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center; }
